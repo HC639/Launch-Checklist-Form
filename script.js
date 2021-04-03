@@ -22,15 +22,15 @@ window.addEventListener("load", function(){
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
       let cargoMass = document.querySelector("input[name=cargoMass]");
       
-      if ( isNaN(fuelLevel.value) ||  isNaN(cargoMass.value) ) {
-         alert("Input the number!");
-      }
+      // if ( isNaN(fuelLevel.value) ||  isNaN(cargoMass.value) ) {
+      //    alert("Input the number!");
+      // }
 
-      if( cargoMass.value === "" ){
+      if( cargoMass.value === "" || fuelLevel.value ==="" || pilotName.value ==="" ||copilotName.value ==="" ){
          alert("All fields are required!");
       }else if( !isNaN(pilotName.value) || !isNaN(copilotName.value) || isNaN(fuelLevel.value) || isNaN(cargoMass.value) ){
          alert("Make sure to enter valid information for each field!");
-      }
+      }else{
      // update the li elements pilotStatus and copilotStatus to include the pilot's name and the co-pilot's name.
    let input = document.getElementById("faultyItems");
    input.style.visibility = "visible";
@@ -78,5 +78,6 @@ window.addEventListener("load", function(){
          <img src="${json[0].image}">`
         });
     });
+   }
    });
 });
